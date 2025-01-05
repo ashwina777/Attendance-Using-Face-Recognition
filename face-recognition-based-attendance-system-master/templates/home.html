@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Face Recognition Based Attendance System</title>
+    <style>
+        body {
+            background-image: url("https://github.com/ashwina777/android-app/blob/main/GEHUcopy2.jpg?raw=true");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .header-title {
+            background: rgba(3, 41, 53, 0.8);
+            color: rgb(167, 159, 159);
+            padding: 15px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            font-size: 2.5rem;
+        }
+        
+        
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            opacity: 0.9;
+            background-color: rgba(200, 194, 194, 0.85);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            background-color: #0b4c61;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-radius: 15px 15px 0 0;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .btn-custom {
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 100%;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background-color: #25ac44;
+            
+            border: none;
+        }
+
+        .btn-success {
+            background-color: #25ac44;
+            border: none;
+        }
+        .btn-success:hover{
+            background-color: #3d5f45;
+        }
+        .btn-primary:hover{
+            background-color: #3d5f45;
+        }
+        .btn-dark:hover{
+            background: #410b98;
+        }
+        .btn-dark {
+            background-color: #343a40;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1 class="header-title">Attendance Portal</h1>
+        {% if mess %}
+        <p class="text-center text-danger fw-bold fs-5">{{ mess }}</p>
+        {% endif %}
+
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Take Attendance</div>
+                    <div class="card-body text-center">
+                        <a href="/start" class="text-decoration-none">
+                            <button class="btn btn-primary btn-custom">
+                                Take Attendance <i class="material-icons">beenhere</i>
+                            </button>
+                        </a>
+                        <a href="/attendance" class="text-decoration-none">
+                            <button class="btn btn-success btn-custom">
+                                Show Attendance <i class="material-icons">assignment</i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">Add New User</div>
+                    <div class="card-body">
+                        <form action="/add" method="POST" enctype="multipart/form-data">
+                            <div class="mb-3">
+                                <label for="newusername" class="form-label fw-bold">Enter New User Name*</label>
+                                <input type="text" id="newusername" name="newusername" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="newuserid" class="form-label fw-bold">Enter New User ID*</label>
+                                <input type="number" id="newuserid" name="newuserid" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-dark btn-custom">Add New User</button>
+                        </form>
+                        <h5 class="text-muted mt-3"><i>Total Users in Database: {{ totalreg }}</i></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
