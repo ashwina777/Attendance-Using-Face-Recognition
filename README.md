@@ -86,7 +86,11 @@ This repository contains a Flask-based web application for managing attendance u
 ## Screenshots
 
 ### Web Interface Overview
-![alt text](image.png)
+![Screenshot 2025-01-05 194201](https://github.com/user-attachments/assets/16430fdc-1a95-48c3-a6a5-b70ef5bf0d91)
+
+![Screenshot 2025-01-05 194233](https://github.com/user-attachments/assets/eb1e1324-1db7-48f6-91bf-b9bb4d64a2e8)
+
+
 
 ---
 
