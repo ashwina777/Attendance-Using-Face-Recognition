@@ -1,8 +1,0 @@
-Flask
-flask-bootstrap
-opencv-python
-opencv-contrib-python
-numpy
-pandas
-scikit-learn
-joblib
